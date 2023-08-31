@@ -1,0 +1,24 @@
+name: Shell 2 jobs
+
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "Hello World"
+      - name: Multiline script
+        run:
+          node -v
+          npm -v
+  run-windows-command:
+    runs-on: windows-latest
+    steps:
+      - name: windows powershell
+        run: Get-Location
+      - name: Directory bash
+        run: pwd
+        shell: bash
+
+
